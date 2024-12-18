@@ -22,10 +22,22 @@
     align-items: center;
     padding: 10px;
     gap: 10px;
+    border-radius: 10px;
+}
+
+.nav_list:hover {
+    cursor: pointer;
+    background-color: rgb(255, 243, 246);
+    color: palevioletred;
 }
 
 .nav_list > img {
     width: 30px;
+}
+
+.nav_list:hover img {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 main {
@@ -54,6 +66,7 @@ main {
 .profile_block_1 {
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 #profile_name {
@@ -71,39 +84,99 @@ main {
     margin: 0 5px;
 }
 
+.profile_button:hover {
+    cursor: pointer;
+    background-color: rgb(255, 243, 246);
+    color: palevioletred;
+
+}
+
+#profile_setting_btn {
+    background-color: initial; /* none (없애기, image), transparent (투명, color), initial*/
+}
+
+#profile_setting_btn > img {
+    height: 35px;
+}
+
+
 .profile_block_2 {
     display: flex;
     align-items: center;
-
+    gap: 50px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .profile_count {
     list-style: none;
 }
 
-.profile_block_3 {
-    display: flex;
-    align-items: flex-start;
-
+.strong {
+    font-weight: bold;
 }
 
-.profile_link > img {
+
+.profile_block_3 {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+}
+
+.profile_link {
+    display: flex;
     height: 15px;
 }
 
-
-
-
-
+.post {
+    width: 100%;
+}
 
 .postbar {
     list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-left: 200px;
+    font-size: 12px;
+    font-weight: bold;
+    gap: 50px;
+    border-top: 1px solid rgb(239, 239, 239);
+}
+
+.post_item {
+    border-top: 1px solid black;
+    padding: 20px 0;
+}
+
+.post_item > img {
+    height: 12px;
+}
+
+.gallary_no_post {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    padding: 100px 0;
+    margin-left: 100px;
+}
+
+.gallary_no_post > img {
+    width: 30px;
+    padding: 15px;
+    border: 3px solid black;
+    border-radius: 50%;
 }
 
 footer {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    color: grey;
+    padding-bottom: 80px;
 }
-
 
 .footer_link {
     list-style: none;
@@ -113,10 +186,19 @@ footer {
 }
 
 .footer_copyright {
-
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
+.footer_copyright > span {
+    display: flex;
+    align-items: center;
+}
 
+.footer_copyright > span img {
+    height: 20px;
+}
 
 
 
