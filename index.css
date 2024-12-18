@@ -1,0 +1,136 @@
+
+
+.navbar {
+    position: fixed; /* navbar, main 분리 */
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    height: 100vh;
+    padding: 10px;
+    border-right: 1px solid rgb(229, 229, 229);
+    background-color: white;
+}
+
+.nav_logo > img {
+    width: 100px;
+    padding: 10px;
+}
+
+.nav_list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.nav_list > img {
+    width: 30px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.profile {
+    display: flex;
+    padding: 0px 0px 50px 0px;
+}
+
+.profile_image {
+    display: flex;
+    align-items:center;
+    padding: 0 50px 0 50px;
+}
+
+.profile_image > img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+.profile_block_1 {
+    display: flex;
+    align-items: center;
+}
+
+#profile_name {
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+.profile_button {
+    background-color: rgb(239, 239, 239);
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 7px;
+    padding: 8px;
+    margin: 0 5px;
+}
+
+.profile_block_2 {
+    display: flex;
+    align-items: center;
+
+}
+
+.profile_count {
+    list-style: none;
+}
+
+.profile_block_3 {
+    display: flex;
+    align-items: flex-start;
+
+}
+
+.profile_link > img {
+    height: 15px;
+}
+
+
+
+
+
+
+.postbar {
+    list-style: none;
+}
+
+footer {
+    display: flex;
+}
+
+
+.footer_link {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer_copyright {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+모달
+dialog >form
+display: 
+
+
+*/
+
