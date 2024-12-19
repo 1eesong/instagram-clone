@@ -57,7 +57,7 @@
             </div>
             <div class = "profile_info">
                 <div class = "profile_block_1">
-                    <p id = "profile_name">song</p>
+                    <p id = "profile_id">song</p>
                     <button class = "profile_button" id = "profile_edit_btn">
                         프로필 편집
                     </button>
@@ -66,24 +66,25 @@
                         <form method = "dialog">
                             <header class = "profile_header">
                                 프로필 편집
-                                <button id = "profile_save_btn">
+                                <button id = "profile_save">
                                     저장
                                 </button>
                             </header>
                             <div class = "profile_upload_img">
                                 <img src = "https://elice-contents.github.io/elice-instagram-clone/assets/default_profile.svg" alt = "profile_img">
+                                <input id = "input_img" type = "file" accept = "image/png, image/gir, image/jpeg">
                             </div>
                             <div class = "profile_upload_text">
-                                <label>Instagram Id</label>
+                                <label for = "upload_id">Instagram Id</label>
                                 <input id = "input_id" placeholder = "instragram id" type = "text">
-                                <label>Username</label>
+                                <label for = "upload_name">Username</label>
                                 <input id = "input_name" placeholder = "username" type = "text">
-                                <label>Add Link</label>
+                                <label for = "upload_link">Add Link</label>
                                 <input id = "input_link" placeholder = "add link" type = "text">
-                                <label>Bio</label>
+                                <label for = "upload_bio">Bio</label>
                                 <textarea id = "input_bio" placeholder = "bio" rows = "5" cols = "30"></textarea>
                             </div>
-                            <button class = "profile_modal_close">
+                            <button id = "profile_modal_close">
                                 <img src = "https://elice-contents.github.io/elice-instagram-clone/assets/close_icon.svg" alt = "edit_close">
                             </button>
                         </form>
@@ -111,7 +112,7 @@
                     </li>
                 </div>
                 <div class = "profile_block_3">
-                    <div class = "profile_title">
+                    <div class = "profile_name">
                         <strong>
                             안녕하세요
                         </strong>
@@ -120,7 +121,7 @@
                     </div>
                     <div class = "profile_link">
                         <img src = "https://elice-contents.github.io/elice-instagram-clone/assets/link_icon.svg" alt = "link_icon">
-                        <a href = "https://www.youtube.com/watch?v=6z82w0l6kwE&list=LL" id = "link">https://www.youtube.com/watch?v=6z82w0l6kwE&list=LL</a>
+                        <a href = "https://www.youtube.com/watch?v=6z82w0l6kwE" id = "link">https://www.youtube.com/watch?v=6z82w0l6kwE</a>
                     </div>
                 </div>
             </div>

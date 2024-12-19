@@ -69,7 +69,7 @@ main {
     margin-bottom: 20px;
 }
 
-#profile_name {
+#profile_id {
     font-size: 25px;
     margin-right: 20px;
 }
@@ -127,6 +127,51 @@ main {
     display: flex;
     height: 15px;
 }
+
+.profile_modal {
+    overflow: hidden;
+}
+
+.profile_modal::backdrop {
+    position: fixed;
+    inset: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#profile_save {
+    color: blue;
+    position: absolute;
+    font-size: 15pxß;
+}
+
+#profile_modal_close {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    padding: 5px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .post {
     width: 100%;
