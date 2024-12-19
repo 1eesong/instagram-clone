@@ -1,129 +1,97 @@
-const defaultProfile = {
-    id: "song",
-    img: "https://elice-contents.github.io/elice-instagram-clone/assets/default_profile.svg",
-    name: "안녕하세요",
-    description: "누구세요",
-    link: "https://www.youtube.com/watch?v=6z82w0l6kwE",
-    post: 0,
-    follower: 1,
-    follow: 1,
-};
+const profile_edit_btn = document.getElementById('profile_edit_btn');
+const profile_modal = document.getElementById('profile_modal_dialog');
+const edit_close_btn = document.getElementById('edit_close_btn');
+const edit_save_btn = document.getElementById('edit_save_btn');
+const profile_image = document.querySelector('.profile_image > img');
+const profile_id = document.getElementById('profile_id');
+const profile_name = document.querySelector('.profile_name > strong');
+const profile_bio = document.querySelector('.profile_bio');
+const profile_link = document.getElementById('link');
 
-// 프로필
-const profile_image_Element = document.getElementsByClassName("profile_image")
-const profile_id_Element = document.getElementsByClassName("profile_id")
-const profile_name_Element = document.getElementsByClassName("profile_name")
-const profile_text_Element = document.getElementsByClassName("profile_text")
-const profile_link_Element = document.getElementsByClassName("profile_link")
+const input_file = document.getElementById('input_file');
+const input_image = document.querySelector('.edit_image > label > img');
 
-// 프로필 모달
-const input_img_Element = document.getElementById("input_img")
-const input_id_Element = document.getElementsByClassName("input_id")
-const input_name_Element = document.getElementsByClassName("input_name")
-const input_link_Element = document.getElementsByClassName("input_link")
-const input_bio_Element = document.getElementsByClassName("input_bio")
+// 모달 열기
+profile_edit_btn.addEventListener('click', () => {
+    profile_modal.showModal();
 
-const profile_button_Element = document.getElementById("profile_edit_btn")
-const profile_modal_Element = document.getElementsByClassName("profile_modal")
-const profile_save_Element = document.getElementById("profile_save")
-const profile_modal_close = document.getElementById("profile_modal_close")
+    const profileStore = JSON.parse(localStorage.getItem('profile'));
+    if(profileStore) {
+        input_image.src = profileStore.image || '';
+        input_id.value = profileStore.id || '';
+        input_name.value = profileStore.name || '';
+        input_bio.value = profileStore.bio || '';
+        input_link.value = profileStore.link || '';
+    }
+});
 
-window.addEventListener("load", () => {
-    initProfileModal();
+// 모달 닫기
+edit_close_btn.addEventListener('click', () => {
+    profile_modal.close();
+});
 
-})
+// 이미지 파일 선택 -> 미리보기 (복습 필요)
+input_file.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            input_image.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+});
 
-// 프로필 모달 켜기
-function initProfileModal() {
-    profile_edit_btn.addEventListener("click", () => {
-        profile_modal_Element.showModal();
-    });
-
-    profile_save_Element.addEventListener("click", profileSave);
-    profile_modal_close.addEventListener("click", () => {
-        updateProfileUI();
-        updateProfileUI();
-    });
+// 저장 버튼 -> 프로필 업데이트
+edit_save_btn.addEventListener('click', (e) => {
+    e.preventDefault();  // 폼 제출 방지
     
-}
+    // 입력 값 가져오기
+    const newProfileId = document.getElementById('input_id').value;
+    const newProfileName = document.getElementById('input_name').value;
+    const newProfileLink = document.getElementById('input_link').value;
+    const newProfileBio = document.getElementById('input_bio').value;
+    
+    // 변경 시 업데이트
+    if (input_image.src) {
+        profile_image.src = input_image.src;
+    }
 
-// 프로필 입력 값 저장
-function UpdateprofileSave() {
-    const {id, img, name, description, link, ...rest} =
-    JSON.parse(localStorage.getItem("profile") || defaultProfile;
+    // 프로필 id, name, link, bio 업데이트
+    profile_id.textContent = newProfileId || profile_id.textContent;
+    profile_name.textContent = newProfileName || profile_name.textContent;
+    profile_bio.textContent = newProfileBio || profile_bio.textContent;
+    profile_link.href = newProfileLink || profile_link.href;
+    profile_link.textContent = newProfileLink || profile_link.textContent;
 
-    const newProfile = {
-        id: input_id_Element.value,
-        img: input_img_Element.getAttribute("src"),
-        name: input_name_Element.value,
-        descriptio: input_bio_Element.value,
-        link: input_link_Element.value,
-        ...rest,
+    // localStorage 저장 (복습 필요)
+    const profileUpdate = {
+        image: profile_image.src,
+        id: profile_id.textContent,
+        name: profile_name.textContent,
+        bio: profile_bio.textContent,
+        link: profile_link.href
     };
 
-    localStorage.setItem("profile", JSON.stringify(newProfile));
+    localStorage.setItem('profile', JSON.stringify(profileUpdate));
 
-    updateProfileUI();
-}
+    // 모달 닫기
+    profile_modal.close();
+});
 
-// 프로필 입력, 저장 값으로 업데이트
+// localStorage 불러오기 (복습 필요)
+window.addEventListener('load', () => {
+    const profileStore = JSON.parse(localStorage.getItem('profile'));
 
-function updateProfileUI() {
-    const profile = JSON.parse(localStorage.getItem("profile")) || defaultProfile;
-
-    profile_image_Element.setAttribute("src", profile.img);
-    profile_id_Element.innerText = profile.id;
-    profile_name_Element.innerText = profile.name;
-    profile_text_Element.innerText = profile.description;
-    profile_link_Element.innerText = profile.link;
-
-    input_img_Element.setAttribute("src", profile.img);
-    input_id_Element.value = profile.id;
-    input_name_Element.value = profile.name;
-    input_link_Element.value = profile.link;
-    input_bio_Element.value = profile.description;
-}
-
-function updateProfile(newProfile) {
-    localStorage.setItem("profile", JSON.stringify(newProfile));
-
-    updateProfileUI();
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 
-
+    if(profileStore) {
+        profile_image.src = profileStore.image || profile_image.src;
+        profile_id.textContent = profileStore.id || profile_id.textContent;
+        profile_name.textContent = profileStore.name || profile_name.textContent;
+        profile_link.textContent = profileStore.link || profile_link.textContent;
+        profile_link.href = profileStore.link || profile_link.href.textContent;
+        profile_bio.textContent = profileStore.bio || profile_bio.textContent;
+    }
+})
 
 
 

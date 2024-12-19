@@ -1,5 +1,3 @@
-
-
 .navbar {
     position: fixed; /* navbar, main 분리 */
     display: flex;
@@ -60,6 +58,8 @@ main {
 
 .profile_image > img {
     width: 150px;
+    height: 150px;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
 }
 
@@ -129,48 +129,87 @@ main {
 }
 
 .profile_modal {
-    overflow: hidden;
+    border-radius: 10px;
+    border: none;
+    padding: 0;
 }
 
 .profile_modal::backdrop {
-    position: fixed;
-    inset: 0px;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-#profile_save {
-    color: blue;
+.edit_header {
+    width: 100%;
+    display: flex;
+    padding: 10px 0;
+    justify-content: center;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#edit_save_btn {
+    color: palevioletred;
+    background-color: transparent;
+    font-weight: bold;
+    border: none;
     position: absolute;
-    font-size: 15pxß;
-}
-
-#profile_modal_close {
-    position: fixed;
-    top: 10px;
     right: 10px;
-    background-color: white;
-    padding: 5px 10px;
 }
 
+.edit_update {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
 
+.edit_image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.edit_image > label > img {
+    width: 100px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
 
+.edit_hover {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+/* (복습 필요) */
+.input_file:hover.edit_hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.edit_input {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 5px;
+}
 
+#edit_close_btn {
+    width: 25px;
+    height: 25px;
+    background-color: palevioletred;
+    border: none;
+    border-radius: 5px;
+    /* position: absolute; 화면 밖 */
+    margin-left: 5px;
+}
 
+#edit_close_btn:hover {
+    cursor: pointer;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+#edit_close_btn > img {
+    width: 100%;
+    height: 100%;
+}
 
 
 .post {
@@ -244,20 +283,4 @@ footer {
 .footer_copyright > span img {
     height: 20px;
 }
-
-
-
-
-
-
-
-
-
-/*
-모달
-dialog >form
-display: 
-
-
-*/
 

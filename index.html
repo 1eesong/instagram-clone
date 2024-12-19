@@ -62,34 +62,49 @@
                         프로필 편집
                     </button>
 
-                    <dialog class = "profile_modal">
-                        <form method = "dialog">
-                            <header class = "profile_header">
-                                프로필 편집
-                                <button id = "profile_save">
-                                    저장
+                    <dialog class = "profile_modal" id = "profile_modal_dialog">
+                        <form method = "modal" id = "profile_form">
+                            <header class = "edit_header">
+                                <div id = "edit_title">
+                                    프로필 편집
+                                </div>
+                                <button id = "edit_save_btn">
+                                        저장
                                 </button>
                             </header>
-                            <div class = "profile_upload_img">
-                                <img src = "https://elice-contents.github.io/elice-instagram-clone/assets/default_profile.svg" alt = "profile_img">
-                                <input id = "input_img" type = "file" accept = "image/png, image/gir, image/jpeg">
+                            <div class = "edit_update">
+                                <div class = "edit_image">
+                                    <label for = "input_file">
+                                        <img alt = "profile_img">
+                                        <div class = "edit_hover">
+                                            <img src = "https://elice-contents.github.io/elice-instagram-clone/assets/camera_icon_white.svg" alt = "edit_image">
+                                        </div>
+                                    </label>
+                                    <input 
+                                        type = "file" 
+                                        accept = "image/png, image/git, image/jpeg"
+                                        name = "profile_file"
+                                        id = "input_file"
+                                    />
+                                </div>
+                                <div class = "edit_input">
+                                    <label for = "input_id"> Instagram Id</label>
+                                    <input id = "input_id" placeholder = "instagram id" type = "text">
+                                    <label for = "input_name"></label>Instagram Name</label>
+                                    <input id = "input_name" placeholder = "instagram name" type = "text">
+                                    <label for = "input_link">Link</label>
+                                    <input id = "input_link" placeholder = "link" type = "text">
+                                    <label for = "input_bio">Bio</label>
+                                    <textarea id = "input_bio" placeholder = "bio" rows="8" cols="32">
+                                    </textarea>
+                                </div>
                             </div>
-                            <div class = "profile_upload_text">
-                                <label for = "upload_id">Instagram Id</label>
-                                <input id = "input_id" placeholder = "instragram id" type = "text">
-                                <label for = "upload_name">Username</label>
-                                <input id = "input_name" placeholder = "username" type = "text">
-                                <label for = "upload_link">Add Link</label>
-                                <input id = "input_link" placeholder = "add link" type = "text">
-                                <label for = "upload_bio">Bio</label>
-                                <textarea id = "input_bio" placeholder = "bio" rows = "5" cols = "30"></textarea>
-                            </div>
-                            <button id = "profile_modal_close">
-                                <img src = "https://elice-contents.github.io/elice-instagram-clone/assets/close_icon.svg" alt = "edit_close">
+                            <button id = "edit_close_btn">
+                                <img src = "https://elice-contents.github.io/elice-instagram-clone/assets/close_icon.svg" alt = "close_icon">
                             </button>
                         </form>
                     </dialog>
-
+                    
                     <button class = "profile_button" id = "profile_story_btn">
                         보관된 스토리 보기
                     </button>
@@ -114,9 +129,9 @@
                 <div class = "profile_block_3">
                     <div class = "profile_name">
                         <strong>
-                            안녕하세요
+                            안녕
                         </strong>
-                    <div class = "profile_text">
+                    <div class = "profile_bio">
                         누구세요
                     </div>
                     <div class = "profile_link">
@@ -175,6 +190,6 @@
             </span>
         </div>
     </footer>
+    <script src = "index.js"></script>
 </body>
-<script type="module" src="src/index.js"></script>
 </html>
