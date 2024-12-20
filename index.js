@@ -1,3 +1,5 @@
+// 프로필 요소
+
 const profile_edit_btn = document.getElementById('profile_edit_btn');
 const profile_modal = document.getElementById('profile_modal_dialog');
 const edit_close_btn = document.getElementById('edit_close_btn');
@@ -11,7 +13,7 @@ const profile_link = document.getElementById('link');
 const input_file = document.getElementById('input_file');
 const input_image = document.querySelector('.edit_image > label > img');
 
-// 모달 열기
+// 프로필 모달 열기
 profile_edit_btn.addEventListener('click', () => {
     profile_modal.showModal();
 
@@ -25,7 +27,7 @@ profile_edit_btn.addEventListener('click', () => {
     }
 });
 
-// 모달 닫기
+// 프로필 모달 닫기
 edit_close_btn.addEventListener('click', () => {
     profile_modal.close();
 });
@@ -93,6 +95,37 @@ window.addEventListener('load', () => {
     }
 })
 
+
+// 포스트
+
+const count_post = document.getElementById('count post');
+const gallary_post = document.querySelector('.gallary');
+const post_add_btn = document.getElementById('post_add_btn');
+const post_modal = document.getElementById('post_modal_dialog');
+
+const add_share_btn = document.getElementById('add_share_btn');
+const add_file = document.getElementById('add_file');
+const add_article = document.getElementById('add_article');
+const add_close_btn = document.getElementById('add_close_btn');
+
+// 포스트 모달 열기
+post_add_btn.addEventListener('click', () => {
+    post_modal.showModal();
+
+    const postStore = JSON.parse(localStorage.getItem('post'));
+    if(profileStore) {
+        add_file.src = postStore.image || '';
+        input_id.value = postStore.id || '';
+        input_name.value = postStore.name || '';
+        input_bio.value = postStore.bio || '';
+        input_link.value = postStore.link || '';
+    }
+});
+
+// 포스트 모달 닫기
+edit_close_btn.addEventListener('click', () => {
+    profile_modal.close();
+});
 
 
 
