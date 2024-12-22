@@ -11,7 +11,7 @@ const profile_bio = document.querySelector('.profile_bio');
 const profile_link = document.getElementById('link');
 
 const input_file = document.getElementById('input_file');
-const input_image = document.querySelector('.edit_image > label > img');
+const input_image = document.getElementById('input_image');
 
 // 프로필 모달 열기
 profile_edit_btn.addEventListener('click', () => {
@@ -44,10 +44,19 @@ input_file.addEventListener('change', (e) => {
     }
 });
 
+// hover
+const edit_hover = document.getElementsByClassName('edit_hover')[0];
+
+input_image.addEventListener('mouseenter', () => {
+    edit_hover.style.display = 'flex';
+})
+
+input_image.addEventListener('mouseleave', () => {
+    edit_hover.style.display = 'none';
+})
+
 // 저장 버튼 -> 프로필 업데이트
 edit_save_btn.addEventListener('click', (e) => {
-    e.preventDefault();  // 폼 제출 방지
-    
     // 입력 값 가져오기
     const newProfileId = document.getElementById('input_id').value;
     const newProfileName = document.getElementById('input_name').value;
@@ -94,38 +103,3 @@ window.addEventListener('load', () => {
         profile_bio.textContent = profileStore.bio || profile_bio.textContent;
     }
 })
-
-
-// 포스트
-
-const count_post = document.getElementById('count post');
-const gallary_post = document.querySelector('.gallary');
-const post_add_btn = document.getElementById('post_add_btn');
-const post_modal = document.getElementById('post_modal_dialog');
-
-const add_share_btn = document.getElementById('add_share_btn');
-const add_file = document.getElementById('add_file');
-const add_article = document.getElementById('add_article');
-const add_close_btn = document.getElementById('add_close_btn');
-
-// 포스트 모달 열기
-post_add_btn.addEventListener('click', () => {
-    post_modal.showModal();
-
-    const postStore = JSON.parse(localStorage.getItem('post'));
-    if(profileStore) {
-        add_file.src = postStore.image || '';
-        input_id.value = postStore.id || '';
-        input_name.value = postStore.name || '';
-        input_bio.value = postStore.bio || '';
-        input_link.value = postStore.link || '';
-    }
-});
-
-// 포스트 모달 닫기
-edit_close_btn.addEventListener('click', () => {
-    profile_modal.close();
-});
-
-
-

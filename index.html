@@ -43,6 +43,7 @@
             <li class = "nav_list" id = "post_add_btn">
                 <img src = "https://elice-contents.github.io/elice-instagram-clone/assets/add_icon.svg" alt = "add">
                 만들기
+
                 <dialog class = "post_modal" id = "post_modal_dialog">
                     <form mtehod = "modal" id = "post_form">
                         <header class = "add_header">
@@ -65,14 +66,17 @@
                                 name = "add_file"
                                 id = "add_file"
                             />
-                            <label for = "add_article"></label>
-                            <textarea id = "add_article" placeholder = "여기에 내용을 입력하세요." rows = "10" cols = "32"></textarea>
+                        </div>
+                        <div class = "add_text">
+                            <img class = "add_image">
+                            <textarea id = "add_textarea" placeholder = "여기에 내용을 입력하세요." rows = "10" cols = "32"></textarea>
                         </div>
                         <button id = "add_close_btn">
                             <img src = "https://elice-contents.github.io/elice-instagram-clone/assets/close_icon.svg" alt = "close_icon">
                         </button>
                     </form>
                 </dialog>
+
             </li>
             <li class = "nav_list">
                 <img src = "https://elice-contents.github.io/elice-instagram-clone/assets/contact_icon.svg" alt = "profile">
@@ -105,7 +109,7 @@
                             <div class = "edit_update">
                                 <div class = "edit_image">
                                     <label for = "input_file">
-                                        <img alt = "profile_img">
+                                        <img id = "input_image" alt = "profile_img">
                                         <div class = "edit_hover">
                                             <img src = "https://elice-contents.github.io/elice-instagram-clone/assets/camera_icon_white.svg" alt = "edit_image">
                                         </div>
@@ -125,8 +129,7 @@
                                     <label for = "input_link">Link</label>
                                     <input id = "input_link" placeholder = "link" type = "text">
                                     <label for = "input_bio">Bio</label>
-                                    <textarea id = "input_bio" placeholder = "bio" rows="8" cols="32">
-                                    </textarea>
+                                    <textarea id = "input_bio" placeholder = "bio" rows="8" cols="32"></textarea>
                                 </div>
                             </div>
                             <button id = "edit_close_btn">
@@ -186,26 +189,8 @@
                     태그됨
                 </li>
             </nav>
-            <div class = "gallary">
-                <div class = "gallary_no_post">
-                    <img src = "https://elice-contents.github.io/elice-instagram-clone/assets/camera_icon.svg" alt = "no_post">
-                    <h3>게시물 없음</h3>
-                </div>
-                <div class = "gallary_post">
-                    <div class = "post_num" id = "post_1">
-                        <img class = "post_image" src = "" alt = "">
-                        <article class = "post_article">
-
-                        </article>
-                    </div>
-                    <div class = "post_num" id = post_2>
-                        <img class = "" src = "" alt = "">
-                    
-
-                    </div>
-                    </div>
-
-                </div>
+            <div class = "gallery_container">
+                <div class = "gallery"></div>
             </div>
         </section>
     </main>
@@ -236,5 +221,6 @@
         </div>
     </footer>
     <script src = "index.js"></script>
+    <script src = "post.js"></script>
 </body>
 </html>
